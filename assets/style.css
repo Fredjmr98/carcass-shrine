@@ -35,7 +35,7 @@ a{color:inherit;text-decoration:underline dotted}a:hover{color:#8a3b24}
 .cols h3{font:700 .82rem/1.1 "Old Standard TT",serif;text-align:center;margin:9px 0 3px;break-after:avoid}
 .cols p{margin:0 0 3px;text-indent:.8em}
 /* carta a mano */
-.letter .sheet{max-width:720px;background:#c9ae83 repeating-linear-gradient(transparent 0 29px,#44566e66 29px 30px);padding:30px 26px 40px 34px;color:#1a2140;font:1.28rem/30px "Cedarville Cursive","Segoe Script",cursive;text-shadow:none;-webkit-text-stroke-width:.35px}
+.letter .sheet{max-width:720px;background:#c9ae83 repeating-linear-gradient(transparent 0 29px,#44566e66 29px 30px);padding:30px 26px 40px 34px;color:#2e2419;font:1.28rem/30px "Cedarville Cursive","Segoe Script",cursive;text-shadow:none;-webkit-text-stroke-width:.35px}
 .letter p{margin:0 0 30px}
 .letter p:nth-child(2n){margin-left:5px}
 .letter p:nth-child(3n){letter-spacing:.4px}
