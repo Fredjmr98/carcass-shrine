@@ -3,4 +3,5 @@ layout: base
 ---
 <a class="back" href="{{ '/' | relative_url }}">← archivo</a>
 <article class="sheet"><p class="place">{{ page.place }}, {{ page.date_text }}</p>
-{{ content }}</article>
+{{ content }}
+{% if page.ref %}<span class="ref">{{ page.ref }}</span>{% endif %}</article>

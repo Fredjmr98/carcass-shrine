@@ -2,9 +2,11 @@
 layout: base
 ---
 <a class="back" href="{{ '/' | relative_url }}">← archivo</a>
-<article class="sheet">
+<article class="sheet{% if page.spacing == 'double' %} dbl{% endif %}">
+<div class="ghost"></div>
 {% if page.stamp %}<span class="stamp">{{ page.stamp }}</span>{% endif %}
 {% if page.handnote %}<span class="hn">{{ page.handnote }}</span>{% endif %}
-<div class="hd"><b>{{ page.office }}</b><br>Expediente: {{ page.file }}<br>Fecha: {{ page.date_text }}<br><u>{{ page.title }}</u></div>
+<div class="hd"><div class="l">{{ page.warning }}</div><div class="r">{{ page.office }}<br>{% if page.file %}Exp. {{ page.file }}<br>{% endif %}{{ page.date_text }}</div></div>
+<h1 class="ttl">{{ page.title }}</h1>
 {{ content }}
 </article>

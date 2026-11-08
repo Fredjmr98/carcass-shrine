@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ page.title }} · {{ site.title }}</title>
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Homemade+Apple&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Cedarville+Cursive&family=Caveat:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body class="{{ page.layout }}">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="ink"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.3"/></filter><filter id="wob"><feTurbulence type="fractalNoise" baseFrequency=".03 .06" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter></svg>
 <div id="doc">{{ content }}</div>
 <div id="radio"><i id="lamp"></i><button id="pp" aria-label="Reproducir o pausar">▶</button><button id="pv" aria-label="Emisora anterior">‹</button><button id="nx" aria-label="Emisora siguiente">›</button><span id="rl">…</span><input id="vol" type="range" min="0" max="1" step=".05" aria-label="Volumen"></div>
 <script src="{{ '/assets/radio.js' | relative_url }}"></script>

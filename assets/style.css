@@ -1,45 +1,61 @@
 :root{--grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .12 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 *{box-sizing:border-box}
 body{margin:0;padding:46px 12px 90px;background:radial-gradient(ellipse at top,#2a221b,#14100d 75%) fixed;font-family:"Old Standard TT",Georgia,serif;color:#2a2118}
-.sheet{position:relative;max-width:760px;margin:0 auto;padding:34px 38px;box-shadow:0 8px 30px #000b}
-.sheet::after{content:"";position:absolute;inset:0;background:var(--grain);mix-blend-mode:multiply;opacity:.5;pointer-events:none}
+/* papel gastado: bordes oscurecidos, manchas, dobleces y grano */
+.sheet{position:relative;max-width:760px;margin:0 auto;padding:34px 38px;text-shadow:0 0 .7px currentColor;box-shadow:0 8px 30px #000b,inset 0 0 90px #6b4a1f88,inset 0 0 6px #3a2a10aa}
+.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;background:radial-gradient(circle at 12% 18%,#7a552a44 0 8%,transparent 24%),radial-gradient(circle at 88% 72%,#6b4a1f3a 0 7%,transparent 22%),radial-gradient(circle at 66% 6%,#8a6a3a30 0 5%,transparent 15%),radial-gradient(circle at 30% 92%,#6b4a1f2a 0 4%,transparent 16%),linear-gradient(90deg,#4a321466 0,transparent 5%,transparent 93%,#4a321450 100%),linear-gradient(transparent 31%,#4a321433 32%,transparent 34%,transparent 65%,#4a32142a 66%,transparent 68%)}
+.sheet::after{content:"";position:absolute;inset:0;background:var(--grain);mix-blend-mode:multiply;opacity:.7;pointer-events:none}
 a{color:inherit;text-decoration:underline dotted}a:hover{color:#8a3b24}
 .back{position:fixed;top:12px;left:14px;z-index:5;font:12px "Special Elite",monospace;color:#d8ccab;text-decoration:none;opacity:.7}
 .back:hover{opacity:1;color:#d8ccab}
+.sheet h1{font-weight:400;font-size:1.5rem;margin:0 0 12px}
 /* marcas que puedes usar dentro de cualquier texto */
-.strike{text-decoration:line-through 2px}
+.strike{text-decoration:line-through 3px}
+.xx{font-weight:700;letter-spacing:-.05em}
 .redact{background:#1b1713;color:#1b1713;user-select:none}
 .hand{font-family:Caveat,cursive;font-size:1.25em;color:#1f3a73;transform:rotate(-2deg);display:inline-block}
-.stamp{display:inline-block;border:3px solid #8a3b24;color:#8a3b24;padding:2px 10px;font-weight:bold;letter-spacing:.15em;transform:rotate(7deg);opacity:.8}
+.fix{position:relative;display:inline-block}
+.pencil{position:absolute;left:0;top:-1em;font:.8em Caveat,cursive;color:#2f7a72;transform:rotate(-4deg);white-space:nowrap;text-shadow:none}
+.scribble{position:relative}
+.scribble::after{content:"";position:absolute;left:-3px;right:-3px;top:38%;height:.5em;background:currentColor;opacity:.8;transform:rotate(-2deg);clip-path:polygon(0 30%,12% 0,30% 40%,48% 5%,70% 45%,88% 8%,100% 35%,96% 100%,75% 65%,52% 100%,30% 70%,10% 100%)}
+.stamp{display:inline-block;border:3px solid #8a3b24;color:#8a3b24;padding:2px 10px;font-weight:bold;letter-spacing:.15em;transform:rotate(7deg);opacity:.72;mix-blend-mode:multiply;filter:url(#ink)}
 .sound{font-style:italic;opacity:.7}
-/* periódico */
-.newspaper .sheet{max-width:1000px;background:#d4c8a4;padding:26px 30px}
-.mast{text-align:center;border-bottom:3px double #2a2118;margin-bottom:10px}
-.mast h1{font:400 clamp(2.2rem,7vw,4.6rem)/1.05 UnifrakturMaguntia,"Old English Text MT",serif;margin:0}
-.dl{display:flex;justify-content:space-between;font-size:.78rem;border-top:1px solid #2a2118;margin-top:6px;padding:3px 0}
-.headline{text-align:center;font-size:1.9rem;line-height:1.1;margin:12px 0;text-decoration:none}
-.cols{columns:3 230px;column-gap:22px;column-rule:1px solid #2a211844;text-align:justify;hyphens:auto;font-size:.86rem;line-height:1.35}
-.cols h3{font-size:1rem;margin:12px 0 3px;border-bottom:1px solid #2a2118;break-after:avoid}
-.cols p{margin:0 0 7px}
+.wire{font-weight:700;letter-spacing:.04em}
+.sheet pre{font:inherit;white-space:pre-wrap;margin:0 0 10px}
+/* periódico: denso, pequeño, apretado */
+.newspaper .sheet{max-width:1100px;background:#cdbf93;padding:12px 16px 26px;color:#26201a}
+.top{display:flex;justify-content:space-between;font-size:.78rem;border-bottom:1px solid #26201a;padding-bottom:2px}
+.mast{text-align:center;border-bottom:4px double #26201a;margin:2px 0 4px;padding:2px 0 6px}
+.mast h1{font:400 clamp(2.6rem,9.5vw,6.2rem)/.95 UnifrakturMaguntia,"Old English Text MT",serif;margin:0;transform:scaleY(1.12)}
+.tag{margin:2px 0 0;font:italic .95rem "Old Standard TT",serif;letter-spacing:.05em}
+.boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px;margin:6px 0 10px}
+.boxes div{border:1px solid #26201a;padding:3px 6px;font-size:.62rem;line-height:1.2;text-align:justify;hyphens:auto}
+.cols{columns:4 175px;column-gap:14px;column-rule:1px solid #26201a88;text-align:justify;hyphens:auto;font-size:.74rem;line-height:1.2}
+.cols .headline{font:400 1.75rem/1 UnifrakturMaguntia,serif;text-align:center;margin:2px 0 8px;break-after:avoid}
+.cols h3{font:700 .82rem/1.1 "Old Standard TT",serif;text-align:center;margin:9px 0 3px;break-after:avoid}
+.cols p{margin:0 0 3px;text-indent:.8em}
 /* carta a mano */
-.letter .sheet{max-width:700px;background:#dccfa9;padding:36px 44px 20px 60px;color:#1c2748;font:1rem/36px "Homemade Apple",cursive;transform:rotate(-.4deg)}
-.letter .sheet{background-image:repeating-linear-gradient(transparent 0 35px,#5a7ea055 35px 36px)}
-.letter p{margin:0 0 36px}
+.letter .sheet{max-width:720px;background:#c9ae83 repeating-linear-gradient(transparent 0 29px,#44566e66 29px 30px);padding:30px 26px 40px 34px;color:#1a2140;font:1.28rem/30px "Cedarville Cursive","Segoe Script",cursive;transform:rotate(-.3deg)}
+.letter p{margin:0 0 30px;filter:url(#wob);text-shadow:0 0 1px #1a2140}
+.letter p:nth-child(2n){margin-left:5px;transform:rotate(.15deg)}
+.letter p:nth-child(3n){letter-spacing:.4px}
 .place{text-align:right}
-.letter .hand{color:#2f6b64}
+.letter .hand{color:#2f7a72}
+.ref{display:block;font:.75rem "Special Elite",monospace;color:#4a4a52;margin-top:-6px;transform:rotate(1deg);text-shadow:none}
 /* mecanografiados, índice y transcripciones */
-.typed .sheet,.index .sheet,.transcript .sheet{background:#e0d6b8;font:.9rem/1.7 "Special Elite","Courier New",monospace;color:#2b2926}
-.typed .hd,.transcript .hd{margin-bottom:16px;padding-bottom:8px}
-.typed .hd{border-bottom:1px dashed #2b2926}
-.typed .hd b{font-size:1.05rem}
-.typed .stamp{position:absolute;right:26px;top:22px;z-index:1}
-.hn{position:absolute;left:40px;top:-8px;font:1.9rem Caveat,cursive;color:#1f3a73;transform:rotate(-3deg);z-index:1}
-.typed p{margin:0 0 12px}
-.sheet h1{font-weight:400;font-size:1.5rem;margin:0 0 12px}
-.typed h2,.index h2,.transcript h2{font-size:.95rem;text-decoration:underline;margin:18px 0 4px}
-.transcript .sheet{background:#c4ba98}
-.transcript .hd{border:1px solid #2b2926;padding:8px 12px}
-.transcript p{margin:5px 0}
+.typed .sheet,.index .sheet,.transcript .sheet{background:#d6c79d;font:.95rem/1.45 "Special Elite","Courier New",monospace;color:#2a2825;max-width:820px;padding:30px 34px 30px 46px}
+.sheet.dbl{line-height:2.1}
+.typed p,.transcript p{margin:0 0 10px;filter:url(#ink)}
+.typed p{text-indent:2.5em}
+.ghost{position:absolute;right:0;top:12%;bottom:8%;width:34%;background:repeating-linear-gradient(transparent 0 19px,#2a282520 19px 21px);filter:blur(1.2px);pointer-events:none}
+.typed .hd{display:flex;justify-content:space-between;gap:16px;margin-bottom:22px}
+.typed .hd .l{max-width:15em}.typed .hd .l::first-line{text-decoration:underline}
+.typed .stamp{position:absolute;right:30px;top:60px;z-index:1}
+.hn{position:absolute;left:28%;top:-12px;font:1.7rem "Cedarville Cursive",cursive;color:#1b2342;transform:rotate(-4deg);z-index:1;filter:url(#wob);text-shadow:none}
+.typed .ttl{font:inherit;text-align:center;text-decoration:underline;margin:0 0 20px;text-transform:uppercase;letter-spacing:.06em}
+.typed h2,.index h2,.transcript h2{font:inherit;text-decoration:underline;text-transform:uppercase;margin:20px 0 6px}
+.transcript .sheet{background:#bfb48f}
+.transcript .hd{border:1px solid #2a2825;padding:8px 12px;margin-bottom:14px}
 .sp{font-weight:bold;display:inline-block;min-width:7.5em}
 .play{background:none;border:0;font:inherit;color:#8a3b24;cursor:pointer;padding:0;text-decoration:underline}
 .index ul{list-style:none;padding-left:0}.index li{margin:4px 0}.kind{opacity:.5;font-size:.75em}
@@ -50,4 +66,4 @@ a{color:inherit;text-decoration:underline dotted}a:hover{color:#8a3b24}
 #rl{max-width:96px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0 3px}
 #radio input{width:54px;accent-color:#b08d3c}
 #lamp{width:7px;height:7px;border-radius:50%;background:#444;margin-right:3px}#lamp.on{background:#ff9a2e;box-shadow:0 0 6px #ff9a2e}
-@media (max-width:600px){.sheet{padding:26px 20px}.letter .sheet{padding:30px 20px 10px 30px}}
+@media (max-width:600px){.sheet{padding:26px 18px}.letter .sheet{padding:26px 16px 30px 22px;font-size:1.1rem}.cols{columns:2 130px}.typed .hd{flex-direction:column}}
