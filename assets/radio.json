@@ -1,0 +1,3 @@
+---
+---
+{"base":{{ site.baseurl | jsonify }},"files":{{ site.static_files | where_exp: "f", "f.path contains '/assets/audio/'" | map: "path" | jsonify }},"cfg":{{ site.data.radio | jsonify }}}

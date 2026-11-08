@@ -1,0 +1,53 @@
+:root{--grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .12 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+*{box-sizing:border-box}
+body{margin:0;padding:46px 12px 90px;background:radial-gradient(ellipse at top,#2a221b,#14100d 75%) fixed;font-family:"Old Standard TT",Georgia,serif;color:#2a2118}
+.sheet{position:relative;max-width:760px;margin:0 auto;padding:34px 38px;box-shadow:0 8px 30px #000b}
+.sheet::after{content:"";position:absolute;inset:0;background:var(--grain);mix-blend-mode:multiply;opacity:.5;pointer-events:none}
+a{color:inherit;text-decoration:underline dotted}a:hover{color:#8a3b24}
+.back{position:fixed;top:12px;left:14px;z-index:5;font:12px "Special Elite",monospace;color:#d8ccab;text-decoration:none;opacity:.7}
+.back:hover{opacity:1;color:#d8ccab}
+/* marcas que puedes usar dentro de cualquier texto */
+.strike{text-decoration:line-through 2px}
+.redact{background:#1b1713;color:#1b1713;user-select:none}
+.hand{font-family:Caveat,cursive;font-size:1.25em;color:#1f3a73;transform:rotate(-2deg);display:inline-block}
+.stamp{display:inline-block;border:3px solid #8a3b24;color:#8a3b24;padding:2px 10px;font-weight:bold;letter-spacing:.15em;transform:rotate(7deg);opacity:.8}
+.sound{font-style:italic;opacity:.7}
+/* periódico */
+.newspaper .sheet{max-width:1000px;background:#d4c8a4;padding:26px 30px}
+.mast{text-align:center;border-bottom:3px double #2a2118;margin-bottom:10px}
+.mast h1{font:400 clamp(2.2rem,7vw,4.6rem)/1.05 UnifrakturMaguntia,"Old English Text MT",serif;margin:0}
+.dl{display:flex;justify-content:space-between;font-size:.78rem;border-top:1px solid #2a2118;margin-top:6px;padding:3px 0}
+.headline{text-align:center;font-size:1.9rem;line-height:1.1;margin:12px 0;text-decoration:none}
+.cols{columns:3 230px;column-gap:22px;column-rule:1px solid #2a211844;text-align:justify;hyphens:auto;font-size:.86rem;line-height:1.35}
+.cols h3{font-size:1rem;margin:12px 0 3px;border-bottom:1px solid #2a2118;break-after:avoid}
+.cols p{margin:0 0 7px}
+/* carta a mano */
+.letter .sheet{max-width:700px;background:#dccfa9;padding:36px 44px 20px 60px;color:#1c2748;font:1rem/36px "Homemade Apple",cursive;transform:rotate(-.4deg)}
+.letter .sheet{background-image:repeating-linear-gradient(transparent 0 35px,#5a7ea055 35px 36px)}
+.letter p{margin:0 0 36px}
+.place{text-align:right}
+.letter .hand{color:#2f6b64}
+/* mecanografiados, índice y transcripciones */
+.typed .sheet,.index .sheet,.transcript .sheet{background:#e0d6b8;font:.9rem/1.7 "Special Elite","Courier New",monospace;color:#2b2926}
+.typed .hd,.transcript .hd{margin-bottom:16px;padding-bottom:8px}
+.typed .hd{border-bottom:1px dashed #2b2926}
+.typed .hd b{font-size:1.05rem}
+.typed .stamp{position:absolute;right:26px;top:22px;z-index:1}
+.hn{position:absolute;left:40px;top:-8px;font:1.9rem Caveat,cursive;color:#1f3a73;transform:rotate(-3deg);z-index:1}
+.typed p{margin:0 0 12px}
+.sheet h1{font-weight:400;font-size:1.5rem;margin:0 0 12px}
+.typed h2,.index h2,.transcript h2{font-size:.95rem;text-decoration:underline;margin:18px 0 4px}
+.transcript .sheet{background:#c4ba98}
+.transcript .hd{border:1px solid #2b2926;padding:8px 12px}
+.transcript p{margin:5px 0}
+.sp{font-weight:bold;display:inline-block;min-width:7.5em}
+.play{background:none;border:0;font:inherit;color:#8a3b24;cursor:pointer;padding:0;text-decoration:underline}
+.index ul{list-style:none;padding-left:0}.index li{margin:4px 0}.kind{opacity:.5;font-size:.75em}
+/* radio */
+#radio{position:fixed;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:9;display:flex;align-items:center;gap:3px;padding:3px 6px;background:#2a1e12;border:1px solid #b08d3c;color:#d9b86a;font:11px "Special Elite",monospace;opacity:.85}
+#radio:hover{opacity:1}
+#radio button{width:22px;height:22px;padding:0;background:#120f0c;color:#d9b86a;border:1px solid #6b5320;cursor:pointer;font-size:11px}
+#rl{max-width:96px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0 3px}
+#radio input{width:54px;accent-color:#b08d3c}
+#lamp{width:7px;height:7px;border-radius:50%;background:#444;margin-right:3px}#lamp.on{background:#ff9a2e;box-shadow:0 0 6px #ff9a2e}
+@media (max-width:600px){.sheet{padding:26px 20px}.letter .sheet{padding:30px 20px 10px 30px}}

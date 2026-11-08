@@ -1,0 +1,11 @@
+---
+layout: base
+---
+<article class="sheet">
+<h1>{{ site.title }}</h1>
+{{ content }}
+{% assign groups = site.archivo | group_by: "category" | sort: "name" %}
+{% for g in groups %}<h2>{{ g.name }}</h2><ul>
+{% assign items = g.items | sort: "title" %}{% for d in items %}<li><a href="{{ d.url | relative_url }}">{{ d.title }}</a> <span class="kind">{{ d.layout }}</span></li>
+{% endfor %}</ul>{% endfor %}
+</article>

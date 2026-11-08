@@ -1,0 +1,10 @@
+---
+layout: base
+---
+<a class="back" href="{{ '/' | relative_url }}">← archivo</a>
+<article class="sheet">
+<header class="mast"><h1>{{ page.paper | default: "La Gaceta" }}</h1>
+<div class="dl"><span>N.º {{ page.issue }}</span><span>{{ page.date_text }}</span><span>{{ page.price | default: "2 centavos" }}</span></div></header>
+<h2 class="headline">{{ page.title }}</h2>
+<div class="cols">{{ content }}</div>
+</article>

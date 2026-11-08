@@ -1,0 +1,11 @@
+# Cada carpeta de assets/audio/ es un «pool»: cualquier mp3 que pongas dentro entra solo, sin tocar nada más.
+static_pool: estatica      # estática compartida por TODAS las emisoras
+static_gap: [25, 70]       # segundos entre una ráfaga de estática y la siguiente
+stations:
+  - name: "540 · Música"
+    layers:
+      - {pool: canciones, gap: [2, 10], volume: 0.8, seek: true}
+  - name: "760 · Voces"
+    layers:
+      - {pool: voces, gap: [5, 25], volume: 0.9}
+      - {pool: canciones, gap: [40, 120], volume: 0.3, seek: true}   # se superpone a las voces

@@ -1,0 +1,9 @@
+title: Archivo Carcass
+lang: es
+# Si publicas como «proyecto» (usuario.github.io/nombre-repo), pon aquí "/nombre-repo". Si no, déjalo vacío.
+baseurl: ""
+collections:
+  archivo:
+    output: true
+    permalink: /archivo/:path/
+exclude: [README.md]

@@ -1,0 +1,10 @@
+---
+layout: base
+---
+<a class="back" href="{{ '/' | relative_url }}">← archivo</a>
+<article class="sheet">
+{% if page.stamp %}<span class="stamp">{{ page.stamp }}</span>{% endif %}
+{% if page.handnote %}<span class="hn">{{ page.handnote }}</span>{% endif %}
+<div class="hd"><b>{{ page.office }}</b><br>Expediente: {{ page.file }}<br>Fecha: {{ page.date_text }}<br><u>{{ page.title }}</u></div>
+{{ content }}
+</article>

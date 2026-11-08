@@ -1,0 +1,9 @@
+---
+layout: base
+---
+<a class="back" href="{{ '/' | relative_url }}">← archivo</a>
+<article class="sheet">
+<div class="hd"><b>{{ page.title }}</b><br>Fuente: {{ page.source }}<br>Fecha: {{ page.date_text }}
+{% if page.audio %}<br><button class="play" data-src="{{ page.audio | prepend: '/assets/audio/grabaciones/' | prepend: site.baseurl }}">[ escuchar el registro ]</button>{% endif %}</div>
+{{ content }}
+</article>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}" data-base="{{ site.baseurl }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} · {{ site.title }}</title>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Homemade+Apple&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body class="{{ page.layout }}">
+<div id="doc">{{ content }}</div>
+<div id="radio"><i id="lamp"></i><button id="pp" aria-label="Reproducir o pausar">▶</button><button id="pv" aria-label="Emisora anterior">‹</button><button id="nx" aria-label="Emisora siguiente">›</button><span id="rl">…</span><input id="vol" type="range" min="0" max="1" step=".05" aria-label="Volumen"></div>
+<script src="{{ '/assets/radio.js' | relative_url }}"></script>
+</body>
+</html>
