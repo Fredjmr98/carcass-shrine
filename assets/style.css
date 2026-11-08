@@ -1,9 +1,9 @@
-:root{--grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .12 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+:root{--grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .12 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 *{box-sizing:border-box}
 body{margin:0;padding:46px 12px 90px;background:radial-gradient(ellipse at top,#2a221b,#14100d 75%) fixed;font-family:"Old Standard TT",Georgia,serif;color:#2a2118}
 /* papel gastado: bordes oscurecidos, manchas, dobleces y grano */
 .sheet{position:relative;max-width:760px;margin:0 auto;padding:34px 38px;text-shadow:0 0 .7px currentColor;box-shadow:0 8px 30px #000b,inset 0 0 90px #6b4a1f88,inset 0 0 6px #3a2a10aa}
-.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;background:radial-gradient(circle at 12% 18%,#7a552a44 0 8%,transparent 24%),radial-gradient(circle at 88% 72%,#6b4a1f3a 0 7%,transparent 22%),radial-gradient(circle at 66% 6%,#8a6a3a30 0 5%,transparent 15%),radial-gradient(circle at 30% 92%,#6b4a1f2a 0 4%,transparent 16%),linear-gradient(90deg,#4a321466 0,transparent 5%,transparent 93%,#4a321450 100%),linear-gradient(transparent 31%,#4a321433 32%,transparent 34%,transparent 65%,#4a32142a 66%,transparent 68%)}
+.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;background:radial-gradient(circle at 12% 18%,#7a552a44 0 8%,transparent 24%),radial-gradient(circle at 88% 72%,#6b4a1f3a 0 7%,transparent 22%),radial-gradient(circle at 66% 6%,#8a6a3a30 0 5%,transparent 15%),radial-gradient(circle at 30% 92%,#6b4a1f2a 0 4%,transparent 16%),linear-gradient(90deg,#4a321466 0,transparent 5%,transparent 93%,#4a321450 100%)}
 .sheet::after{content:"";position:absolute;inset:0;background:var(--grain);mix-blend-mode:multiply;opacity:.7;pointer-events:none}
 a{color:inherit;text-decoration:underline dotted}a:hover{color:#8a3b24}
 .back{position:fixed;top:12px;left:14px;z-index:5;font:12px "Special Elite",monospace;color:#d8ccab;text-decoration:none;opacity:.7}
@@ -35,9 +35,9 @@ a{color:inherit;text-decoration:underline dotted}a:hover{color:#8a3b24}
 .cols h3{font:700 .82rem/1.1 "Old Standard TT",serif;text-align:center;margin:9px 0 3px;break-after:avoid}
 .cols p{margin:0 0 3px;text-indent:.8em}
 /* carta a mano */
-.letter .sheet{max-width:720px;background:#c9ae83 repeating-linear-gradient(transparent 0 29px,#44566e66 29px 30px);padding:30px 26px 40px 34px;color:#1a2140;font:1.28rem/30px "Cedarville Cursive","Segoe Script",cursive;transform:rotate(-.3deg)}
-.letter p{margin:0 0 30px;filter:url(#wob);text-shadow:0 0 1px #1a2140}
-.letter p:nth-child(2n){margin-left:5px;transform:rotate(.15deg)}
+.letter .sheet{max-width:720px;background:#c9ae83 repeating-linear-gradient(transparent 0 29px,#44566e66 29px 30px);padding:30px 26px 40px 34px;color:#1a2140;font:1.28rem/30px "Cedarville Cursive","Segoe Script",cursive;text-shadow:none;-webkit-text-stroke-width:.35px}
+.letter p{margin:0 0 30px}
+.letter p:nth-child(2n){margin-left:5px}
 .letter p:nth-child(3n){letter-spacing:.4px}
 .place{text-align:right}
 .letter .hand{color:#2f7a72}
@@ -51,7 +51,7 @@ a{color:inherit;text-decoration:underline dotted}a:hover{color:#8a3b24}
 .typed .hd{display:flex;justify-content:space-between;gap:16px;margin-bottom:22px}
 .typed .hd .l{max-width:15em}.typed .hd .l::first-line{text-decoration:underline}
 .typed .stamp{position:absolute;right:30px;top:60px;z-index:1}
-.hn{position:absolute;left:28%;top:-12px;font:1.7rem "Cedarville Cursive",cursive;color:#1b2342;transform:rotate(-4deg);z-index:1;filter:url(#wob);text-shadow:none}
+.hn{position:absolute;left:28%;top:-12px;font:1.7rem "Cedarville Cursive",cursive;color:#1b2342;transform:rotate(-4deg);z-index:1;text-shadow:none}
 .typed .ttl{font:inherit;text-align:center;text-decoration:underline;margin:0 0 20px;text-transform:uppercase;letter-spacing:.06em}
 .typed h2,.index h2,.transcript h2{font:inherit;text-decoration:underline;text-transform:uppercase;margin:20px 0 6px}
 .transcript .sheet{background:#bfb48f}
